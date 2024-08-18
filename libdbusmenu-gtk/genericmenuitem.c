@@ -46,10 +46,6 @@ struct _GenericmenuitemPrivate {
 	gchar * label_text;
 };
 
-/* Private macro */
-#define GENERICMENUITEM_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE ((o), GENERICMENUITEM_TYPE, GenericmenuitemPrivate))
-
 /* Prototypes */
 static void genericmenuitem_class_init (GenericmenuitemClass *klass);
 static void genericmenuitem_init       (Genericmenuitem *self);
@@ -108,7 +104,7 @@ genericmenuitem_class_init (GenericmenuitemClass *klass)
 static void
 genericmenuitem_init (Genericmenuitem *self)
 {
-	self->priv = GENERICMENUITEM_GET_PRIVATE(self);
+	self->priv = g_type_instance_get_private ((GTypeInstance *)(self), GENERICMENUITEM_TYPE);
 
 	self->priv->check_type = GENERICMENUITEM_CHECK_TYPE_NONE;
 	self->priv->state = GENERICMENUITEM_STATE_UNCHECKED;

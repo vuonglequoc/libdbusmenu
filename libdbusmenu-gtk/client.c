@@ -93,7 +93,7 @@ dbusmenu_gtkclient_class_init (DbusmenuGtkClientClass *klass)
 static void
 dbusmenu_gtkclient_init (DbusmenuGtkClient *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE ((self), DBUSMENU_GTKCLIENT_TYPE, DbusmenuGtkClientPrivate);
+	self->priv = g_type_instance_get_private ((GTypeInstance *)(self), DBUSMENU_GTKCLIENT_TYPE);
 
 	DbusmenuGtkClientPrivate * priv = DBUSMENU_GTKCLIENT_GET_PRIVATE(self);
 

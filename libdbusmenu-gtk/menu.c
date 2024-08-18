@@ -111,7 +111,7 @@ menu_focus_cb(DbusmenuGtkMenu * menu, gpointer userdata)
 static void
 dbusmenu_gtkmenu_init (DbusmenuGtkMenu *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE ((self), DBUSMENU_GTKMENU_TYPE, DbusmenuGtkMenuPrivate);
+	self->priv = g_type_instance_get_private ((GTypeInstance *)(self), DBUSMENU_GTKMENU_TYPE);
 
 	DbusmenuGtkMenuPrivate * priv = DBUSMENU_GTKMENU_GET_PRIVATE(self);
 
